@@ -63,6 +63,5 @@ export default {
   server: {
     host: process.env.NUXT_HOST,
     port: process.env.NUXT_PORT,
-  },
-  target: 'serverless'
+  }
 }
