@@ -57,11 +57,6 @@
 </script>
 
 <style lang="scss" scoped>
-@function scaleValue($value) {
-    @return calc(
-      #{$value} * (clamp(350px, 100vw, 3840px) / var(--ideal-viewport-width));
-    );
-}
 
 .slide {
     position: relative;

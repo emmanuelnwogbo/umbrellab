@@ -80,14 +80,11 @@
 </script>
 
 <style lang="scss" scoped>
-
 @function scaleValue($value) {
     @return calc(
       #{$value} * (clamp(350px, 100vw, 3840px) / var(--ideal-viewport-width));
     );
 }
-
-$finalwidth: 61rem;
 
 .works {
     position: relative;
@@ -105,10 +102,9 @@ $finalwidth: 61rem;
         height: 100vh;
         width: 100vw;
         background: rgba(20, 20, 20, 1);
-
         animation: grow .7s ease-in-out alternate;
     }
-
+    
     &__sidepan {
         position: fixed;
         top: 0;
@@ -127,7 +123,6 @@ $finalwidth: 61rem;
         overflow-y: auto;
         overflow-x: hidden;
         padding-bottom: 30rem;
-
         transform: rotate(-90deg) translateY(-52rem);
         transform-origin: right top;
         width: 97rem;

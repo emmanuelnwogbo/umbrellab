@@ -102,7 +102,7 @@ export default {
     position: relative;
     display: flex;
 
-    margin-top: 25rem;
+    margin-top: #{scaleValue(220)};
     z-index: 2;
   }
 
@@ -110,17 +110,21 @@ export default {
     position: relative;
     color: #fff;
     z-index: 4;
+    width: #{scaleValue(800)};
+    flex-shrink: 0;
+
+    //background: red;
 
     & h1 {
-      font-size: 11rem;
-      line-height: 12rem;
+      font-size: #{scaleValue(100)};
+      line-height: #{scaleValue(110)};
       font-weight: 800;
       animation: dropin 1.2s ease-in-out alternate;
-      margin-bottom: 2rem;
+      margin-bottom: #{scaleValue(20)};
     }
 
     & h3 {
-      font-size: 3.5rem;
+      font-size: #{scaleValue(40)};
       font-weight: 500;
       animation: dropin 1.4s ease-in-out alternate;
     }
@@ -128,7 +132,6 @@ export default {
 
   &__right {
     position: relative;
-    margin-left: #{scaleValue(100)};
     animation: dropin 1.4s ease-in-out alternate;
   }
 
@@ -148,26 +151,26 @@ export default {
 
     & label {
       text-transform: uppercase;
-      font-size: 3rem;
+      font-size: #{scaleValue(30)};
       font-weight: 600;
       background: red;
-      padding: 1.6rem 5rem;
+      padding: #{scaleValue(15)} #{scaleValue(70)};
 
       transition: all 1s ease;
 
       &.yellow {
         background: rgba(226, 155, 49, 1);
-        transform: translateY(-14rem);
+        transform: translateY(#{scaleValue(-140)});
       }
 
       &.blue {
         background: rgba(49, 194, 226, 1);
-        transform: translateY(-11rem);
+        transform: translateY(#{scaleValue(-140)});
       }
 
       &.orange {
         background: rgba(226, 81, 49, 1);
-        transform: translateY(-4rem);
+        transform: translateY(#{scaleValue(-80)});
       }
     }
 
@@ -202,7 +205,7 @@ export default {
       }
 
       & label {
-        transform: scale(.7) translateY(-25rem);
+        transform: scale(.7) translateY(#{scaleValue(-270)});
       }
     }
 
@@ -214,7 +217,7 @@ export default {
       }
 
       & label {
-        transform: scale(.7) translateY(-30rem);
+        transform: scale(.7) translateY(#{scaleValue(-350)});
       }
     }
 
@@ -234,7 +237,7 @@ export default {
 
   &__slide {
     height: #{scaleValue(470)};
-    width: 60rem;
+    width: #{scaleValue(670)};
     display: flex;
   }
 
@@ -246,14 +249,14 @@ export default {
 
     &--btn {
       border-radius: 100%;
-      height: 5rem;
-      width: 5rem;
+      height: #{scaleValue(50)};
+      width: #{scaleValue(50)};
       background: rgba(70, 70, 70, 1);
       display: flex;
       justify-content: center;
       align-items: center;
 
-      margin: 0 1rem;
+      margin: 0 #{scaleValue(20)};
       cursor: pointer;
 
       & img {
