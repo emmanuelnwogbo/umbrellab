@@ -52,6 +52,7 @@ export default {
   ],
   styleResources: {
     scss: [
+      '~/assets/scss/mixins/base.scss',
       '~/assets/scss/animations.scss',
       '~/assets/scss/mixins/logo.scss',
       '~/assets/scss/mixins/padding.scss',
