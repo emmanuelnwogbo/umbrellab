@@ -145,6 +145,12 @@
         width: 100%;
         object-fit: contain;
         transition: all 1s ease;
+
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
     }
 
     &__label {
@@ -158,7 +164,7 @@
         color: #fff;
 
 
-      animation: dropin 1.2s ease-in-out alternate;
+        animation: dropin 1.2s ease-in-out alternate;
 
         &--name {
             text-transform: uppercase;

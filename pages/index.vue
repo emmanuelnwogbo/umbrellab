@@ -1,8 +1,6 @@
 <template>
   <div class="main">
-    <!--<figure class="main__logo">
-      <img src="@/assets/imgs/logo.svg"/>
-    </figure>-->
+    <Logo />
     <div class="main__container">
       <div class="main__left">
         <h1>Where ideas </br> come to live</h1>
@@ -35,7 +33,7 @@
             outoffocus: current !== 3,
             inview: current === 3,
             preview: current === 2
-            }">
+            }" @click="$router.push('about')">
             <figure>
               <img src="@/assets/imgs/about.png" />
             </figure>
@@ -91,18 +89,14 @@ export default {
 
 .main {
   position: relative;
-
   @include mainsidepadding;
-
-  &__logo {
-    @include logo
-  }
+  padding-top: #{scaleValue(40)};
 
   &__container {
     position: relative;
     display: flex;
 
-    margin-top: #{scaleValue(220)};
+    margin-top: #{scaleValue(160)};
     z-index: 2;
   }
 
@@ -112,8 +106,6 @@ export default {
     z-index: 4;
     width: #{scaleValue(800)};
     flex-shrink: 0;
-
-    //background: red;
 
     & h1 {
       font-size: #{scaleValue(100)};
@@ -153,7 +145,6 @@ export default {
       text-transform: uppercase;
       font-size: #{scaleValue(30)};
       font-weight: 600;
-      background: red;
       padding: #{scaleValue(15)} #{scaleValue(70)};
 
       transition: all 1s ease;
@@ -191,6 +182,7 @@ export default {
     &.inview {
       transform: translateX(#{scaleValue(-60)});
       opacity: 1;
+      z-index: 2;
     }
 
     &.preview {

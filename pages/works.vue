@@ -1,8 +1,13 @@
 <template>
     <div class="works">
-        <div class="works__sidepan">
-
-        </div>
+        <Sidepan>
+            <template v-slot:caption>
+                <figure class="sidepan__figure">
+                    <img src="@/assets/imgs/works.png" />
+                </figure>
+                <label class="sidepan__label yellow">Works</label>
+            </template>
+        </Sidepan>
         <div class="works__slider" id="slider">
             <div v-for="item in images" class="works__slide">
                 <Slide :images="item.images" :name="item.name" :itemclass="item.itemclass" :tag="item.tag"/>
@@ -87,32 +92,7 @@
 }
 
 .works {
-    position: relative;
-    z-index: 2;
-    transition: all .5s ease-in;
-    display: flex;
-    animation: fadeinto 1.5s ease-in-out alternate;
-    
-    &::before {
-        content: '';
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background: rgba(20, 20, 20, 1);
-        animation: grow .7s ease-in-out alternate;
-    }
-
-    &__sidepan {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: #{scaleValue(970)}; 
-        width: #{scaleValue(340)}; 
-        background: #000000;
-        z-index: 10;
-    }
+    @include pagelayout;
 
     &__slider {
         position: absolute;
@@ -122,9 +102,9 @@
         height: #{scaleValue(1900)}; 
         overflow-y: auto;
         overflow-x: hidden;
-        transform: rotate(-90deg) translateY(#{scaleValue(-580)});
+        transform: rotate(-90deg) translateY(#{scaleValue(-550)}) translateX(#{scaleValue(-20)});
         transform-origin: right top;
-        width: #{scaleValue(920)}; 
+        width: #{scaleValue(900)}; 
     }
 }
 </style>
