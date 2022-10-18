@@ -89,7 +89,6 @@
 .works {
     position: relative;
     z-index: 2;
-    height: 100vh;
     transition: all .5s ease-in;
     display: flex;
     animation: fadeinto 1.5s ease-in-out alternate;
@@ -104,14 +103,15 @@
         background: rgba(20, 20, 20, 1);
         animation: grow .7s ease-in-out alternate;
     }
-    
+
     &__sidepan {
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
-        width: 45rem;
+        height: #{scaleValue(970)}; 
+        width: #{scaleValue(340)}; 
         background: #000000;
+        z-index: 10;
     }
 
     &__slider {
@@ -119,13 +119,12 @@
         display: block;
         top: 0;
         left: 0;
-        height: #{scaleValue(1280)}; 
+        height: #{scaleValue(1900)}; 
         overflow-y: auto;
         overflow-x: hidden;
-        padding-bottom: 30rem;
-        transform: rotate(-90deg) translateY(-52rem);
+        transform: rotate(-90deg) translateY(#{scaleValue(-580)});
         transform-origin: right top;
-        width: 97rem;
+        width: #{scaleValue(920)}; 
     }
 }
 </style>

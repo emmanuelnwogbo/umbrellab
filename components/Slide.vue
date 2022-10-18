@@ -57,141 +57,83 @@
 </script>
 
 <style lang="scss" scoped>
+@function scaleValue($value) {
+    @return calc(
+      #{$value} * (clamp(350px, 100vw, 3840px) / var(--ideal-viewport-width));
+    );
+}
 
 .slide {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 103rem;
-    transform: rotate(90deg) translateX(103rem) translateY(2rem);
-    transform-origin: right top;
-    transition: all 1s ease;
-
-    animation: fadeinto 1s ease-in-out alternate;
+    height: #{scaleValue(920)}; 
+    width: #{scaleValue(1010)};
 
     &::before {
         content: '';
         position: absolute;
-        top: 12rem;
+        top: #{scaleValue(4)};
         left: 0;
         background: rgba(0, 0, 0, .35);
-        height: 74.5rem;
+        height: #{scaleValue(730)};
         width: 100%;
         z-index: 4;
     }
 
-    &__nav {
-        position: absolute;
-        top: 0;
-        left: -3rem;
-        z-index: 2;
-        width: 3rem;
-        height: 90rem;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        & span {
-            display: inline-block;
-            border-radius: 100%;
-            background: rgba(255, 255, 255, .5);
-            height: 1rem;
-            width: 1rem;
-            cursor: pointer;
-            transition: all 1s ease;
-            margin: .5rem 0;
-
-            &.current {
-                background: #fff;
-            }
-        }
-    }
-
-    &__label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 87rem;
-        z-index: 5;
-        padding-top: 47rem;
-        padding-left: 1rem;
-        color: #fff;
-
-
-      animation: dropin 1.2s ease-in-out alternate;
-
-        &--name {
-            text-transform: uppercase;
-            display: inline;
-            font-weight: 600;
-            font-size: 4rem;
-            background: rgba(226, 155, 49, 1);
-            padding: 1rem;
-        }
-
-        &--tag {
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            font-style: italic;
-            width: 24rem;
-            line-height: 2.5rem;
-        }
-    }
-
     &.quidax {
-         width: 100rem;
+         width: #{scaleValue(980)};
+         transform: rotate(90deg) translateX(#{scaleValue(60)}) translateY(#{scaleValue(130)});
     }
 
     &.chips {
-        width: 100rem;
-        transform: rotate(90deg) translateX(108rem) translateY(2rem);
+        width: #{scaleValue(980)};
+        transform: rotate(90deg) translateX(#{scaleValue(190)}) translateY(#{scaleValue(130)});
 
         &::before {
-            top: 12.2rem;
-            height: 74rem;
+            top: #{scaleValue(5)};
+            height: #{scaleValue(726)};
         }
     }
 
     &.nestle {
-        width: 62rem;
-        transform: rotate(90deg) translateX(75rem) translateY(-35rem);
+        width: #{scaleValue(600)};
+        height: #{scaleValue(1000)};
+        transform: rotate(90deg) translateX(#{scaleValue(90)}) translateY(#{scaleValue(-55)});
 
         &::before {
-            top: 8.2rem;
-            height: 82rem;
+            top: #{scaleValue(4)};
+            height: #{scaleValue(792)};
         }
     }
 
     &.cocacola {
-        transform: rotate(90deg) translateX(77rem) translateY(-2rem);
+        width: #{scaleValue(980)};
+        transform: rotate(90deg) translateX(#{scaleValue(-13)}) translateY(#{scaleValue(130)});
 
         &::before {
-            top: 13.3rem;
-            height: 71.7rem;
+            top: #{scaleValue(5)};
+            height: #{scaleValue(725)};
         }
     }
 
     &.visa {
-        width: 62rem;
-        transform: rotate(90deg) translateX(44rem) translateY(-35rem);
+        width: #{scaleValue(600)};
+        height: #{scaleValue(1000)};
+        transform: rotate(90deg) translateX(#{scaleValue(-115)}) translateY(#{scaleValue(-55)});
 
         &::before {
-            top: 8.3rem;
-            height: 82rem;
+            top: #{scaleValue(4)};
+            height: #{scaleValue(792)};
         }
     }
 
     &.rebellion {
-        position: absolute;
-        width: 62rem;
-        transform: rotate(90deg) translateX(11rem) translateY(-35rem);
+        width: #{scaleValue(600)};
+        height: #{scaleValue(1000)};
+        transform: rotate(90deg) translateX(#{scaleValue(-455)}) translateY(#{scaleValue(-55)});
 
         &::before {
-            top: 8.3rem;
-            height: 82rem;
+            top: #{scaleValue(4)};
+            height: #{scaleValue(792)};
         }
     }
 
@@ -202,13 +144,68 @@
         height: 80%;
         width: 100%;
         object-fit: contain;
-        transform: translateY(8rem);
         transition: all 1s ease;
-        opacity: 0;
+    }
 
-        &.visible {
-            opacity: 1;
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: #{scaleValue(400)}; 
+        z-index: 5;
+        padding-top: #{scaleValue(400)}; 
+        padding-left: #{scaleValue(10)}; 
+        color: #fff;
+
+
+      animation: dropin 1.2s ease-in-out alternate;
+
+        &--name {
+            text-transform: uppercase;
+            display: inline;
+            font-weight: 600;
+            font-size: #{scaleValue(35)}; 
+            background: rgba(226, 155, 49, 1);
+            padding: #{scaleValue(10)}; 
+        }
+
+        &--tag {
+            margin-top: #{scaleValue(20)}; 
+            font-size: #{scaleValue(15)}; 
+            font-style: italic;
+            width: #{scaleValue(200)}; 
+            line-height: #{scaleValue(25)}; 
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 0;
+        left: #{scaleValue(-30)}; 
+        z-index: 2;
+        width: #{scaleValue(30)}; 
+        height: #{scaleValue(800)};
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & span {
+            display: inline-block;
+            border-radius: 100%;
+            background: rgba(255, 255, 255, .5);
+            height: #{scaleValue(10)}; 
+            width: #{scaleValue(10)}; 
+            cursor: pointer;
+            transition: all 1s ease;
+            margin: #{scaleValue(5)} 0;
+
+            &.current {
+                background: #fff;
+            }
         }
     }
 }
+
 </style>
