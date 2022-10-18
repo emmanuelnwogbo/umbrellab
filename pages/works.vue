@@ -1,5 +1,6 @@
 <template>
     <div class="works">
+        <div class="works__sliderprogress" id="sliderindicator"></div>
         <Sidepan>
             <template v-slot:caption>
                 <figure class="sidepan__figure">
@@ -80,7 +81,20 @@
                 ]
             }
         },
-        mounted() {}
+        mounted() {
+            console.log('mounted');
+            const slider = document.getElementById('slider');
+            slider.onscroll = () => {
+                animateProgressIndicator()
+            };
+
+            function animateProgressIndicator() {
+                let winScroll = slider.scrollTop || slider.scrollTop;
+                let height = slider.scrollHeight - slider.clientHeight;
+                let scrolled = (winScroll / height * 100);
+                document.getElementById("sliderindicator").style.width = scrolled + "%";
+            }
+        }
     }
 </script>
 
@@ -102,9 +116,20 @@
         height: #{scaleValue(1900)}; 
         overflow-y: auto;
         overflow-x: hidden;
-        transform: rotate(-90deg) translateY(#{scaleValue(-550)}) translateX(#{scaleValue(-20)});
+        transform: rotate(-90deg) translateY(#{scaleValue(-550)}) translateX(#{scaleValue(-50)});
         transform-origin: right top;
-        width: #{scaleValue(900)}; 
+        width: #{scaleValue(850)}; 
+    }
+
+    &__sliderprogress {
+        position: absolute;
+        top: 0;
+        left: #{scaleValue(340)};
+        height: #{scaleValue(3)}; 
+        width: 0;
+        background: #fff; 
+        z-index: 12;
+        transition: all .1s ease;
     }
 }
 </style>
