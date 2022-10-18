@@ -116,7 +116,7 @@
         height: #{scaleValue(1900)}; 
         overflow-y: auto;
         overflow-x: hidden;
-        transform: rotate(-90deg) translateY(#{scaleValue(-550)}) translateX(#{scaleValue(-50)});
+        transform: rotate(-90deg) translateY(#{scaleValue(-510)}) translateX(#{scaleValue(-50)});
         transform-origin: right top;
         width: #{scaleValue(850)}; 
     }
