@@ -108,6 +108,10 @@
 .works {
     @include pagelayout;
 
+    @media only screen and (max-width: 414px) {
+        flex-direction: column;
+    }
+
     &__slider {
         position: absolute;
         display: block;
@@ -119,6 +123,14 @@
         transform: rotate(-90deg) translateY(#{scaleValue(-510)}) translateX(#{scaleValue(-50)});
         transform-origin: right top;
         width: #{scaleValue(850)}; 
+
+        @media only screen and (max-width: 414px) {
+            position: relative;
+            background: green;
+            transform: none;
+            height: auto;
+            width: auto 
+        }
     }
 
     &__sliderprogress {
@@ -130,6 +142,10 @@
         background: #fff; 
         z-index: 12;
         transition: all .1s ease;
+
+        @media only screen and (max-width: 414px) {
+            display: none;
+        }
     }
 }
 </style>

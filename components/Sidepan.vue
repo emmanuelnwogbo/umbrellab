@@ -24,12 +24,24 @@
     padding: #{scaleValue(40)}; 
     padding-left: #{scaleValue(100)}; 
 
+    @media only screen and (max-width: 414px) {
+        position: relative;
+        height: #{scaleValue(1200)}; 
+        width: 100vw;
+    }
+
     &__figure {
         margin-top: #{scaleValue(140)}; 
         height: #{scaleValue(300)};
         width: #{scaleValue(300)};
 
         transform: translateX(#{scaleValue(-80)});
+
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(700)};
+            width: #{scaleValue(700)};
+            margin-top: #{scaleValue(20)}; 
+        }
 
         & img {
             object-fit: contain;
@@ -45,9 +57,17 @@
         font-weight: 600;
         text-transform: uppercase;
 
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(80)};
+        }
+
         &.yellow {
             background: rgba(226, 155, 49, 1);
             transform: translateX(#{scaleValue(-60)}) translateY(#{scaleValue(-110)});
+
+            @media only screen and (max-width: 414px) {
+                transform: translateX(#{scaleValue(100)}) translateY(#{scaleValue(-110)});
+            }
         }
 
         &.blue {

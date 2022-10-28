@@ -99,6 +99,10 @@
         height: #{scaleValue(1000)};
         transform: rotate(90deg) translateX(#{scaleValue(90)}) translateY(#{scaleValue(-55)});
 
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(2200)};
+        }
+
         &::before {
             top: #{scaleValue(4)};
             height: #{scaleValue(792)};
@@ -108,6 +112,10 @@
     &.cocacola {
         width: #{scaleValue(980)};
         transform: rotate(90deg) translateX(#{scaleValue(-13)}) translateY(#{scaleValue(130)});
+
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(1200)};
+        }
 
         &::before {
             top: #{scaleValue(5)};
@@ -120,6 +128,10 @@
         height: #{scaleValue(1000)};
         transform: rotate(90deg) translateX(#{scaleValue(-115)}) translateY(#{scaleValue(-55)});
 
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(2500)};
+        }
+
         &::before {
             top: #{scaleValue(4)};
             height: #{scaleValue(792)};
@@ -130,6 +142,10 @@
         width: #{scaleValue(600)};
         height: #{scaleValue(1000)};
         transform: rotate(90deg) translateX(#{scaleValue(-455)}) translateY(#{scaleValue(-55)});
+
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(2600)};
+        }
 
         &::before {
             top: #{scaleValue(4)};
@@ -147,6 +163,12 @@
         transition: all 1s ease;
 
         opacity: 0;
+
+        @media only screen and (max-width: 414px) {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
 
         &.visible {
             opacity: 1;
@@ -166,6 +188,11 @@
 
         animation: dropin 1.2s ease-in-out alternate;
 
+        @media only screen and (max-width: 414px) {
+            padding-top: #{scaleValue(500)}; 
+            padding-left: #{scaleValue(40)}; 
+        }
+
         &--name {
             text-transform: uppercase;
             display: inline;
@@ -173,6 +200,11 @@
             font-size: #{scaleValue(35)}; 
             background: rgba(226, 155, 49, 1);
             padding: #{scaleValue(10)}; 
+
+            @media only screen and (max-width: 414px) {
+                font-size: #{scaleValue(100)}; 
+                 margin-top: #{scaleValue(40)};
+            }
         }
 
         &--tag {
@@ -181,6 +213,13 @@
             font-style: italic;
             width: #{scaleValue(200)}; 
             line-height: #{scaleValue(25)}; 
+
+            @media only screen and (max-width: 414px) {
+                font-size: #{scaleValue(80)}; 
+                line-height: #{scaleValue(100)}; 
+                width: #{scaleValue(1000)}; 
+                margin-top: #{scaleValue(40)};
+            }
         }
     }
 
@@ -210,6 +249,18 @@
             &.current {
                 background: #fff;
             }
+        }
+    }
+
+    @media only screen and (max-width: 414px) {
+        transform: none !important;
+        width: 100vw !important;
+        height: #{scaleValue(1200)}; 
+
+        &::before {
+            top: 0!important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, .5);
         }
     }
 }

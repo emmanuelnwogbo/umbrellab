@@ -21,6 +21,11 @@
   height: #{scaleValue(100)};
   width: #{scaleValue(120)};
 
+  @media only screen and (max-width: 414px) {
+    height: #{scaleValue(200)};
+    width: #{scaleValue(220)};
+  }
+
   & img {
     height: 53%;
     width: 100%;
